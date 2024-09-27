@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Chat Kost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="fixed bottom-5 right-5 w-80 p-4 bg-white shadow-lg rounded-lg">
+      <div class="bg-blue-500 text-white p-3 rounded-t-lg">
+        <h3 class="font-bold">Kost Live Chat</h3>
+      </div>
+      <div id="chat-box" class="p-3 h-60 overflow-y-auto">
+        <div id="chat-log">
+          <div class="flex mb-2">
+            <div class="bg-blue-200 p-2 rounded-lg">
+              <p>Halo, ada yang bisa kami bantu?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-3 bg-gray-50 rounded-b-lg">
+        <label class="block text-sm mb-2 font-bold text-gray-700"
+          >Pilih Pertanyaan:</label
+        >
+        <select
+          id="question-filter"
+          class="block w-full p-2 border rounded-md bg-white"
+        >
+          <option value="">-- Pilih Pertanyaan --</option>
+          <option value="penyewaan-kost">Info Penyewaan Kost</option>
+          <option value="kamar-pria">Kamar untuk Pria</option>
+          <option value="kamar-wanita">Kamar untuk Wanita</option>
+          <option value="kamar-eksklusif">Kamar Eksklusif</option>
+          <option value="fasilitas">Fasilitas Kost</option>
+        </select>
+      </div>
+    </div>
+
+    <script>
+      const chatBox = document.getElementById("chat-log");
+      const questionFilter = document.getElementById("question-filter");
+
+      questionFilter.addEventListener("change", function () {
+        let response = "";
+        let userQuestion = this.options[this.selectedIndex].text;
+
+        switch (this.value) {
+          case "penyewaan-kost":
+            response =
+              "Kami menawarkan berbagai pilihan kost mulai dari bulanan hingga tahunan. Hubungi kami untuk detail lebih lanjut.";
+            break;
+          case "kamar-pria":
+            response =
+              "Kami memiliki kamar khusus untuk pria dengan fasilitas yang lengkap dan nyaman.";
+            break;
+          case "kamar-wanita":
+            response =
+              "Kami menyediakan kamar khusus wanita dengan keamanan 24 jam dan lingkungan yang nyaman.";
+            break;
+          case "kamar-eksklusif":
+            response =
+              "Kamar eksklusif kami dilengkapi dengan AC, kamar mandi dalam, dan akses internet cepat.";
+            break;
+          case "fasilitas":
+            response =
+              "Fasilitas kost kami mencakup internet, laundry, ruang tamu, dapur, dan tempat parkir.";
+            break;
+          default:
+            response = "Silakan pilih pertanyaan yang tersedia.";
+        }
+
+        if (this.value) {
+          addMessage(userQuestion, "user");
+          setTimeout(() => {
+            addMessage(response, "bot");
+          }, 1000);
+        }
+      });
+
+      function addMessage(message, sender) {
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add(
+          "flex",
+          sender === "user" ? "justify-end" : ""
+        );
+        messageDiv.innerHTML = `
+            <div class="${
+              sender === "user" ? "bg-gray-200" : "bg-blue-200"
+            } p-2 rounded-lg mb-2">
+                <p>${message}</p>
+            </div>
+        `;
+        chatBox.appendChild(messageDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+          }
+    </script>
+  </body>
+</html>

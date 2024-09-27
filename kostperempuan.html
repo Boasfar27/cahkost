@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kost Wanita - CahKost</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    </style>
+   <header
+   class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-500 to-purple-600 shadow z-50"
+ >
+   <div
+     class="container mx-auto px-4 py-4 flex justify-between items-center"
+   >
+     <a
+       href="home.html"
+       class="text-2xl font-bold text-white hover:text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 transition-colors duration-300"
+     >
+       CahKost
+     </a>
+
+     <!-- Navigation for large screens -->
+     <nav class="hidden md:flex space-x-20">
+       <!-- Kelas Kost Dropdown -->
+       <div class="relative dropdown">
+         <a
+           href="#"
+           class="block py-2 text-white hover:text-yellow-300 flex items-center"
+           id="kelas-kost-link"
+           >Kelas Kost
+           <!-- Dropdown icon -->
+           <svg
+             class="w-4 h-4 ml-1 dropdown-icon"
+             fill="none"
+             stroke="currentColor"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg"
+           >
+             <path
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               d="M19 9l-7 7-7-7"
+             ></path>
+           </svg>
+         </a>
+         <div
+           class="absolute hidden dropdown-menu bg-white text-gray-800 mt-2 rounded shadow-lg z-50"
+         >
+           <a href="kostpria.html" class="block px-4 py-2 hover:bg-gray-200"
+             >Kost Pria</a
+           >
+           <a
+             href="kostperempuan.html"
+             class="block px-4 py-2 hover:bg-gray-200"
+             >Kost Wanita</a
+           >
+           <a
+             href="kostekslusif.html"
+             class="block px-4 py-2 hover:bg-gray-200"
+             >Kost Eksklusif</a
+           >
+         </div>
+       </div>
+
+       <a
+         href="promo.html"
+         class="block py-2 text-white hover:text-yellow-300"
+         >Promo</a
+       >
+       <a
+         href="tentangkami.html"
+         class="block py-2 text-white hover:text-yellow-300"
+         >Tentang Kami</a
+       >
+     </nav>
+
+     <!-- User dropdown with profile photo for logged-in user -->
+     <div class="hidden md:flex">
+       <div class="relative dropdown">
+         <a
+           href="#"
+           class="ml-2 px-4 py-2 text-white hover:text-yellow-300 flex items-center"
+           id="user-dropdown-link"
+         >
+           Nama Pengguna
+           <!-- Profile photo -->
+           <img
+             src="https://via.placeholder.com/40"
+             alt="Profile Photo"
+             class="w-10 h-10 rounded-full ml-2"
+             id="user-profile-photo"
+           />
+           <!-- Dropdown icon -->
+           <svg
+             class="w-4 h-4 ml-1 dropdown-icon"
+             fill="none"
+             stroke="currentColor"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg"
+           >
+             <path
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               d="M19 9l-7 7-7-7"
+             ></path>
+           </svg>
+         </a>
+         <div
+           class="absolute hidden dropdown-menu bg-white text-gray-800 mt-2 rounded shadow-lg z-50"
+         >
+           <a
+             href="editprofile.html"
+             class="block px-4 py-2 hover:bg-gray-200"
+             >Edit Profile</a
+           >
+           <a
+             href="history-pembayaran.html"
+             class="block px-4 py-2 hover:bg-gray-200"
+             >History Pembayaran</a
+           >
+           <a
+             href="index.html"
+             id="logout-link"
+             class="block px-4 py-2 hover:bg-gray-200 text-red-600"
+             >Logout</a
+           >
+         </div>
+       </div>
+     </div>
+
+     <!-- Mobile menu button -->
+     <button
+       class="md:hidden text-white hover:text-yellow-300"
+       id="menu-button"
+     >
+       <svg
+         class="w-6 h-6"
+         fill="none"
+         stroke="currentColor"
+         viewBox="0 0 24 24"
+         xmlns="http://www.w3.org/2000/svg"
+       >
+         <path
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           stroke-width="2"
+           d="M4 6h16M4 12h16m-7 6h7"
+         ></path>
+       </svg>
+     </button>
+   </div>
+
+   <!-- Mobile Menu -->
+   <div class="hidden md:hidden" id="mobile-menu">
+     <nav class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+       <!-- nama pengguna -->
+       <div class="relative dropdown">
+         <a
+           href="#"
+           class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-300 flex items-center"
+           id="user-dropdown-link"
+         >
+           Nama Pengguna
+           <!-- Dropdown icon -->
+           <svg
+             class="w-4 h-4 ml-1 dropdown-icon"
+             fill="none"
+             stroke="currentColor"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg"
+           >
+             <path
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               d="M19 9l-7 7-7-7"
+             ></path>
+           </svg>
+           <!-- Profile photo -->
+           <img
+             src="https://picsum.photos/200"
+             alt="Profile Photo"
+             class="w-12 h-12 rounded-full ml-auto"
+           />
+         </a>
+
+         <div
+           class="hidden dropdown-menu bg-white text-gray-800 mt-2 rounded shadow-lg z-50"
+         >
+           <a
+             href="editprofile.html"
+             class="block px-4 py-2 hover:bg-gray-200"
+             >Edit Profile</a
+           >
+           <a
+             href="history-pembayaran.html"
+             class="block px-4 py-2 hover:bg-gray-200"
+             >History Pembayaran</a
+           >
+           <a
+             href="index.html"
+             id="logout-link"
+             class="block px-4 py-2 hover:bg-gray-200 text-red-600"
+             >Logout</a
+           >
+         </div>
+       </div>
+
+       <!-- Kelas Kost Dropdown for Mobile -->
+       <div class="relative dropdown">
+         <a
+           href="#"
+           class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-300 flex items-center"
+           id="kelas-kost-link"
+           >Kelas Kost
+           <!-- Dropdown icon -->
+           <svg
+             class="w-4 h-4 ml-1 dropdown-icon"
+             fill="none"
+             stroke="currentColor"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg"
+           >
+             <path
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               d="M19 9l-7 7-7-7"
+             ></path>
+           </svg>
+         </a>
+         <div
+           class="hidden dropdown-menu bg-white text-gray-800 mt-2 rounded shadow-lg z-50"
+         >
+           <a href="kostpria.html" class="block px-4 py-2 hover:bg-gray-200"
+             >Kost Pria</a
+           >
+           <a
+             href="kostperempuan.html"
+             class="block px-4 py-2 hover:bg-gray-200"
+             >Kost Wanita</a
+           >
+           <a
+             href="kostekslusif.html"
+             class="block px-4 py-2 hover:bg-gray-200"
+             >Kost Eksklusif</a
+           >
+         </div>
+       </div>
+
+       <a
+         href="promo.html"
+         class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-300"
+         >Promo</a
+       >
+       <a
+         href="tentangkami.html"
+         class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-300"
+         >Tentang Kami</a
+       >
+     </nav>
+   </div>
+ </header>
+    
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+      <!-- Kost Wanita Section -->
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-gray-800">Kost Wanita</h2>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
+            <img src="https://picsum.photos/200" alt="Kost Wanita 1" class="rounded-lg w-full" />
+            <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg">Promo</div>
+            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Wanita 1</h3>
+            <p class="mt-2 text-gray-600">Rp 500.000 / bulan</p>
+            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+          </div>
+    
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+            <img src="https://picsum.photos/200" alt="Kost Wanita 2" class="rounded-lg w-full" />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Wanita 2</h3>
+            <p class="mt-2 text-gray-600">Rp 800.000 / bulan</p>
+            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+          </div>
+    
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+            <img src="https://picsum.photos/200" alt="Kost Wanita 3" class="rounded-lg w-full" />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Wanita 3</h3>
+            <p class="mt-2 text-gray-600">Rp 1.000.000 / bulan</p>
+            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+          </div>
+    
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
+            <img src="https://picsum.photos/200" alt="Kost Wanita 4" class="rounded-lg w-full" />
+            <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg">Promo</div>
+            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Wanita 4</h3>
+            <p class="mt-2 text-gray-600">Rp 1.200.000 / bulan</p>
+            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+          </div>
+    
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+            <img src="https://picsum.photos/200" alt="Kost Wanita 5" class="rounded-lg w-full" />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Wanita 5</h3>
+            <p class="mt-2 text-gray-600">Rp 1.500.000 / bulan</p>
+            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+          </div>
+    
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+            <img src="https://picsum.photos/200" alt="Kost Wanita 6" class="rounded-lg w-full" />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Wanita 6</h3>
+            <p class="mt-2 text-gray-600">Rp 1.800.000 / bulan</p>
+            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC, Kolam Renang</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+          </div>
+    
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
+            <img src="https://picsum.photos/200" alt="Kost Wanita 7" class="rounded-lg w-full" />
+            <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg">Promo</div>
+            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Wanita 7</h3>
+            <p class="mt-2 text-gray-600">Rp 2.000.000 / bulan</p>
+            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC, Kolam Renang, Gym</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+          </div>
+    
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+            <img src="https://picsum.photos/200" alt="Kost Wanita 8" class="rounded-lg w-full" />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Wanita 8</h3>
+            <p class="mt-2 text-gray-600">Rp 2.200.000 / bulan</p>
+            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC, Kolam Renang, Gym, Rooftop</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+          </div>
+    
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+            <img src="https://picsum.photos/200" alt="Kost Wanita 9" class="rounded-lg w-full" />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Wanita 9</h3>
+            <p class="mt-2 text-gray-600">Rp 2.500.000 / bulan</p>
+            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC, Kolam Renang, Gym, Rooftop, Spa</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+          </div>
+    
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+            <img src="https://picsum.photos/200" alt="Kost Wanita 10" class="rounded-lg w-full" />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Wanita 10</h3>
+            <p class="mt-2 text-gray-600">Rp 3.000.000 / bulan</p>
+            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC, Kolam Renang, Gym, Rooftop, Spa, Sauna</p>
+            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+          </div>
+        </div>
+      </section>
+    </main>
+      
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-center md:text-left">
+            <a href="#" class="text-2xl font-bold">CahKost</a>
+            <p class="mt-2">
+              Revolutionizing Hospitality, One Pod and Cabin at a Time
+            </p>
+          </div>
+          <div class="mt-4 md:mt-0 space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-gray-400 hover:text-white"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+        <div class="mt-8 flex flex-col md:flex-row justify-between items-center">
+          <p>&copy; 2023 CahKost. All Rights Reserved.</p>
+          <div class="mt-4 md:mt-0 space-x-4">
+            <a href="https://www.instagram.com/farhaaan____/"
+              ><img src="ig.png" alt="Instagram" class="h-6"
+            /></a>
+            <a href="https://wa.me/+6285158442747"
+              ><img src="wa.jpeg" alt="WhatsApp" class="h-6"
+            /></a>
+          </div>
+        </div>
+          
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle mobile menu visibility on click
+      document
+        .getElementById("menu-button")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // Show dropdown when hovering over and hide it when cursor leaves
+      document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+        // Show dropdown when cursor enters the dropdown area
+        dropdown.addEventListener("mouseenter", function () {
+          var menu = this.querySelector(".dropdown-menu");
+          menu.classList.remove("hidden");
+        });
+
+        // Hide dropdown when cursor leaves the dropdown area
+        dropdown.addEventListener("mouseleave", function () {
+          var menu = this.querySelector(".dropdown-menu");
+          menu.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
