@@ -8,61 +8,29 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <style>
-      body {
-        background: linear-gradient(to right, #4e54c8, #8f94fb);
-      }
-      .register-container {
-        background: #1a202c;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        color: black;
-      }
-      .register-header {
-        background: linear-gradient(to right, #4e54c8, #8f94fb);
-        color: white;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-      }
-      .register-button {
-        background: linear-gradient(to right, #4e54c8, #8f94fb);
-        color: white;
-      }
-      .register-button:hover {
-        background: linear-gradient(to right, #8f94fb, #4e54c8);
-      }
-      .social-button {
-        background: white;
-        color: #1a202c;
-      }
-      .social-button:hover {
-        background: #e2e8f0;
-      }
-    </style>
   </head>
-  <body class="flex items-center justify-center min-h-screen">
-    <div class="register-container w-full max-w-md p-8">
-      <div class="register-header text-center py-4">
+  <body
+    class="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-600 to-blue-300"
+  >
+    <div class="w-full max-w-md p-8 bg-gray-900 rounded-lg shadow-lg">
+      <div
+        class="text-center py-4 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-t-lg"
+      >
         <h1 class="text-2xl font-bold">CahKost</h1>
         <p class="mt-2">Buat Akun Gratis Anda</p>
       </div>
       <div class="mt-8 space-y-6">
         <button
-          class="social-button w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium bg-white text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
           <img
             src="/assets/img/google 1.png"
             alt="Google"
-            class="h-5 w-5 mr-2"
+            class="h-5 w-7 mr-2"
           />
           Daftar dengan Google
         </button>
-        <button
-          class="social-button w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-        >
-          <img src="/assets/img/apple 1.png" alt="Apple" class="h-5 w-5 mr-2" />
-          Daftar dengan Apple
-        </button>
+
         <div class="flex items-center justify-center">
           <span class="border-t border-gray-300 flex-grow mr-3"></span>
           <span class="text-gray-400">atau</span>
@@ -111,6 +79,7 @@
               type="password"
               id="password"
               name="password"
+              placeholder="Enter password"
               required
               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
@@ -126,11 +95,17 @@
             <label for="terms" class="ml-2 block text-sm text-gray-300">
               Dengan mendaftar, Anda membuat akun CahKost, dan Anda setuju
               dengan
-              <a href="#" class="text-indigo-400 hover:text-indigo-300"
+              <a
+                href="/assets/img/rd dita.pdf"
+                download
+                class="text-indigo-400 hover:text-indigo-300"
                 >Syarat Penggunaan</a
               >
               dan
-              <a href="#" class="text-indigo-400 hover:text-indigo-300"
+              <a
+                href="/assets/img/rd dita.pdf"
+                download
+                class="text-indigo-400 hover:text-indigo-300"
                 >Kebijakan Privasi</a
               >
               CahKost.
@@ -139,7 +114,7 @@
           <div>
             <button
               type="submit"
-              class="register-button w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium bg-gradient-to-r from-indigo-600 to-blue-500 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Buat Akun
             </button>
