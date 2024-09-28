@@ -5,427 +5,349 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kost Pria - CahKost</title>
     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
     <style>
-      .dropdown:hover .dropdown-menu {
-        display: block;
+      /* Simple styles for the slider */
+      .slider-container {
+        position: relative;
+      }
+
+      .slider-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .prev-btn,
+      .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .prev-btn {
+        left: 10px;
+      }
+
+      .next-btn {
+        right: 10px;
       }
     </style>
   </head>
   <body class="font-sans antialiased bg-gray-100">
-    <!-- Header -->
-    <header
-      class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-500 to-purple-600 shadow z-50"
-    >
-      <div
-        class="container mx-auto px-4 py-4 flex justify-between items-center"
-      >
-        <a
-          href="home.html"
-          class="text-2xl font-bold text-white hover:text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 transition-colors duration-300"
-        >
-          CahKost
-        </a>
-
-        <!-- Navigation for large screens -->
-        <nav class="hidden md:flex space-x-20">
-          <!-- Kelas Kost Dropdown -->
-          <div class="relative dropdown">
-            <a
-              href="#"
-              class="block py-2 text-white hover:text-yellow-300 flex items-center"
-              id="kelas-kost-link"
-              >Kelas Kost
-              <!-- Dropdown icon -->
-              <svg
-                class="w-4 h-4 ml-1 dropdown-icon"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </a>
-            <div
-              class="absolute hidden dropdown-menu bg-white text-gray-800 mt-2 rounded shadow-lg z-50"
-            >
-              <a href="kostpria.html" class="block px-4 py-2 hover:bg-gray-200"
-                >Kost Pria</a
-              >
-              <a
-                href="kostperempuan.html"
-                class="block px-4 py-2 hover:bg-gray-200"
-                >Kost Wanita</a
-              >
-              <a
-                href="kostekslusif.html"
-                class="block px-4 py-2 hover:bg-gray-200"
-                >Kost Eksklusif</a
-              >
-            </div>
-          </div>
-
-          <a
-            href="promo.html"
-            class="block py-2 text-white hover:text-yellow-300"
-            >Promo</a
-          >
-          <a
-            href="tentangkami.html"
-            class="block py-2 text-white hover:text-yellow-300"
-            >Tentang Kami</a
-          >
-        </nav>
-
-        <!-- User dropdown with profile photo for logged-in user -->
-        <div class="hidden md:flex">
-          <div class="relative dropdown">
-            <a
-              href="#"
-              class="ml-2 px-4 py-2 text-white hover:text-yellow-300 flex items-center"
-              id="user-dropdown-link"
-            >
-              Nama Pengguna
-              <!-- Profile photo -->
-              <img
-                src="https://via.placeholder.com/40"
-                alt="Profile Photo"
-                class="w-10 h-10 rounded-full ml-2"
-                id="user-profile-photo"
-              />
-              <!-- Dropdown icon -->
-              <svg
-                class="w-4 h-4 ml-1 dropdown-icon"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </a>
-            <div
-              class="absolute hidden dropdown-menu bg-white text-gray-800 mt-2 rounded shadow-lg z-50"
-            >
-              <a
-                href="editprofile.html"
-                class="block px-4 py-2 hover:bg-gray-200"
-                >Edit Profile</a
-              >
-              <a
-                href="history-pembayaran.html"
-                class="block px-4 py-2 hover:bg-gray-200"
-                >History Pembayaran</a
-              >
-              <a
-                href="index.html"
-                id="logout-link"
-                class="block px-4 py-2 hover:bg-gray-200 text-red-600"
-                >Logout</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile menu button -->
-        <button
-          class="md:hidden text-white hover:text-yellow-300"
-          id="menu-button"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="hidden md:hidden" id="mobile-menu">
-        <nav class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
-          <!-- nama pengguna -->
-          <div class="relative dropdown">
-            <a
-              href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-300 flex items-center"
-              id="user-dropdown-link"
-            >
-              Nama Pengguna
-              <!-- Dropdown icon -->
-              <svg
-                class="w-4 h-4 ml-1 dropdown-icon"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-              <!-- Profile photo -->
-              <img
-                src="https://picsum.photos/200"
-                alt="Profile Photo"
-                class="w-12 h-12 rounded-full ml-auto"
-              />
-            </a>
-
-            <div
-              class="hidden dropdown-menu bg-white text-gray-800 mt-2 rounded shadow-lg z-50"
-            >
-              <a
-                href="editprofile.html"
-                class="block px-4 py-2 hover:bg-gray-200"
-                >Edit Profile</a
-              >
-              <a
-                href="history-pembayaran.html"
-                class="block px-4 py-2 hover:bg-gray-200"
-                >History Pembayaran</a
-              >
-              <a
-                href="index.html"
-                id="logout-link"
-                class="block px-4 py-2 hover:bg-gray-200 text-red-600"
-                >Logout</a
-              >
-            </div>
-          </div>
-
-          <!-- Kelas Kost Dropdown for Mobile -->
-          <div class="relative dropdown">
-            <a
-              href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-300 flex items-center"
-              id="kelas-kost-link"
-              >Kelas Kost
-              <!-- Dropdown icon -->
-              <svg
-                class="w-4 h-4 ml-1 dropdown-icon"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </a>
-            <div
-              class="hidden dropdown-menu bg-white text-gray-800 mt-2 rounded shadow-lg z-50"
-            >
-              <a href="kostpria.html" class="block px-4 py-2 hover:bg-gray-200"
-                >Kost Pria</a
-              >
-              <a
-                href="kostperempuan.html"
-                class="block px-4 py-2 hover:bg-gray-200"
-                >Kost Wanita</a
-              >
-              <a
-                href="kostekslusif.html"
-                class="block px-4 py-2 hover:bg-gray-200"
-                >Kost Eksklusif</a
-              >
-            </div>
-          </div>
-
-          <a
-            href="promo.html"
-            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-300"
-            >Promo</a
-          >
-          <a
-            href="tentangkami.html"
-            class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-yellow-300"
-            >Tentang Kami</a
-          >
-        </nav>
-      </div>
-    </header>
-    
-
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
       <!-- Kost Pria Section -->
       <section class="mt-16">
         <h2 class="text-2xl font-bold text-gray-800">Kost Pria</h2>
         <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Kost 1 -->
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
-            <img src="https://picsum.photos/200" alt="Kost Pria 1" class="rounded-lg w-full" />
-            <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg">Promo</div>
+            <img
+              src="https://picsum.photos/150"
+              alt="Kost Pria 1"
+              class="rounded-lg w-full"
+            />
+            <div
+              class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg"
+            >
+              Promo
+            </div>
             <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Pria 1</h3>
             <p class="mt-2 text-gray-600">Rp 500.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
-          </div>
-    
-          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Pria 2" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Pria 2</h3>
-            <p class="mt-2 text-gray-600">Rp 700.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
-          </div>
-    
-          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Pria 3" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Pria 3</h3>
-            <p class="mt-2 text-gray-600">Rp 900.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
-          </div>
-    
-          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
-            <img src="https://picsum.photos/200" alt="Kost Pria 4" class="rounded-lg w-full" />
-            <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg">Promo</div>
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Pria 4</h3>
-            <p class="mt-2 text-gray-600">Rp 1.000.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
-          </div>
-    
-          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Pria 5" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Pria 5</h3>
-            <p class="mt-2 text-gray-600">Rp 1.200.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
-          </div>
-    
-          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Pria 6" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Pria 6</h3>
-            <p class="mt-2 text-gray-600">Rp 1.400.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC, Kolam Renang</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
-          </div>
-    
-          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
-            <img src="https://picsum.photos/200" alt="Kost Pria 7" class="rounded-lg w-full" />
-            <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg">Promo</div>
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Pria 7</h3>
-            <p class="mt-2 text-gray-600">Rp 1.600.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC, Kolam Renang, Gym</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
-          </div>
-    
-          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Pria 8" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Pria 8</h3>
-            <p class="mt-2 text-gray-600">Rp 1.800.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC, Kolam Renang, Gym, Rooftop</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
-          </div>
-    
-          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Pria 9" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Pria 9</h3>
-            <p class="mt-2 text-gray-600">Rp 2.000.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC, Kolam Renang, Gym, Rooftop, Spa</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
-          </div>
-    
-          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Pria 10" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Pria 10</h3>
-            <p class="mt-2 text-gray-600">Rp 2.200.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, AC, Kolam Renang, Gym, Rooftop, Spa, Sauna</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-600"
+              onclick="openModal('kost-1')"
+              >Sewa</a
+            >
           </div>
         </div>
       </section>
     </main>
-    
-    
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="text-center md:text-left">
-            <a href="#" class="text-2xl font-bold">CahKost</a>
-            <p class="mt-2">
-              Revolutionizing Hospitality, One Pod and Cabin at a Time
-            </p>
-          </div>
-          <div class="mt-4 md:mt-0 space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white"
-              >Privacy Policy</a
-            >
-            <a href="#" class="text-gray-400 hover:text-white"
-              >Terms of Service</a
-            >
-          </div>
+    <!-- Main Modal -->
+    <div
+      id="main-modal"
+      class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden flex items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative">
+        <button
+          class="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+          onclick="closeModal()"
+        >
+          ✖
+        </button>
+
+        <h3 class="text-xl font-bold text-gray-800" id="kost-name"></h3>
+        <p class="text-gray-600">Kota: Surabaya</p>
+        <p class="text-gray-600" id="kost-address">
+          Alamat lengkap: Jl. Kost Aman, No. 123
+        </p>
+
+        <!-- Image Slider -->
+        <div class="mt-4 slider-container">
+          <img
+            id="slider-image"
+            src="https://picsum.photos/600/400?random=1"
+            alt="Kost Image"
+            class="slider-image"
+          />
+          <button class="prev-btn" onclick="prevImage()">&#10094;</button>
+          <button class="next-btn" onclick="nextImage()">&#10095;</button>
         </div>
-        <div class="mt-8 flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; 2023 CahKost. All Rights Reserved.</p>
-          <div class="mt-4 md:mt-0 space-x-4">
-            <a href="https://www.instagram.com/farhaaan____/"
-              ><img src="ig.png" alt="Instagram" class="h-6"
-            /></a>
-            <a href="https://wa.me/+6285158442747"
-              ><img src="wa.jpeg" alt="WhatsApp" class="h-6"
-            /></a>
+
+        <button
+          class="mt-4 bg-yellow-500 text-white py-2 px-4 rounded-lg"
+          onclick="openFacilitiesModal()"
+        >
+          Fasilitas
+        </button>
+
+        <button
+          class="mt-4 bg-green-500 text-white py-2 px-4 rounded-lg"
+          onclick="openBookingModal()"
+        >
+          Mulai Sewa
+        </button>
+      </div>
+    </div>
+
+    <!-- Facilities Modal -->
+    <div
+      id="facilities-modal"
+      class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden flex items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative">
+        <button
+          class="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+          onclick="closeFacilitiesModal()"
+        >
+          ✖
+        </button>
+
+        <h3 class="text-xl font-bold text-gray-800">Fasilitas</h3>
+        <div class="grid grid-cols-2 gap-4 mt-4">
+          <!-- Wi-Fi -->
+          <div class="flex items-center">
+            <i class="fa-solid fa-wifi text-gray-600 text-xl"></i>
+            <span class="ml-2 text-gray-600">Wi-Fi</span>
           </div>
-        </div>
+
+          <!-- Kamar Mandi Dalam -->
+          <div class="flex items-center">
+            <i class="fa-solid fa-bath text-gray-600 text-xl"></i>
+            <span class="ml-2 text-gray-600">Kamar Mandi Dalam</span>
+          </div>
+
+          <!-- Parkir -->
+          <div class="flex items-center">
+            <i class="fa-solid fa-square-parking"></i>
+            <span class="ml-2 text-gray-600">Parkir</span>
+          </div>
+          <!-- AC -->
+          <div class="flex items-center">
+            <i class="fa-solid fa-air-conditioner"></i>
+            <span class="ml-2 text-gray-600">AC</span>
+          </div>
+          <!-- Laundry -->
+          <div class="flex items-center">
+           <i class="fa-solid fa-jug-detergent"></i>
+            <span class="ml-2 text-gray-600">Laundry</span>
+          </div>
+          <!-- TV -->
+          <div class="flex items-center">
+            <i class="fa-solid fa-tv"></i>
+            <span class="ml-2 text-gray-600">TV</span>
+          </div>
+          <!-- Kolam Renang -->
+          <div class="flex items-center">
+            <i class="fa-solid fa-water"></i>
+            <span class="ml-2 text-gray-600">Kolam Renang</span>
+          </div>
+          <!-- Gym -->
+          <div class="flex items-center">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span class="ml-2 text-gray-600">Gym</span>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
+
+    <!-- Booking Modal -->
+    <div
+      id="booking-modal"
+      class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden flex items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative">
+        <button
+          class="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+          onclick="closeBookingModal()"
+        >
+          ✖
+        </button>
+
+        <h3 class="text-xl font-bold text-gray-800">Form Sewa</h3>
+        <form class="mt-4 space-y-4">
+          <div>
+            <label class="block text-gray-600">Nama Lengkap</label>
+            <input
+              type="text"
+              class="w-full px-4 py-2 border rounded-lg"
+              placeholder="Masukkan nama lengkap"
+            />
+          </div>
+          <div>
+            <label class="block text-gray-600">Nomor Telepon</label>
+            <input
+              type="text"
+              class="w-full px-4 py-2 border rounded-lg"
+              placeholder="Masukkan nomor telepon"
+            />
+          </div>
+          <div>
+            <label class="block text-gray-600">Upload KTP</label>
+            <input
+              type="file"
+              class="w-full px-4 py-2 border rounded-lg"
+              accept="image/*"
+            />
+          </div>
+
+          <button
+            type="button"
+            class="w-full bg-green-500 text-white py-2 px-4 rounded-lg"
+            onclick="openPaymentModal()"
+          >
+            Lanjutkan ke Pembayaran
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div
+      id="payment-modal"
+      class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden flex items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative">
+        <button
+          class="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+          onclick="closePaymentModal()"
+        >
+          ✖
+        </button>
+
+        <h3 class="text-xl font-bold text-gray-800">Pembayaran</h3>
+        <p class="text-gray-600">Pilih metode pembayaran:</p>
+        <div class="mt-4 space-y-2">
+          <div class="flex items-center space-x-2">
+            <img src="/assets/img/bankbca.png" alt="Bank BCA" class="h-8" />
+            <button
+              class="w-full text-black py-2 px-4 rounded-lg border border-black"
+            >
+              Transfer Bank BCA
+            </button>
+          </div>
+          <div class="flex items-center space-x-2">
+            <img
+              src="/assets/img/bankmandiri.png"
+              alt="Bank Mandiri"
+              class="h-8"
+            />
+            <button
+              class="w-full text-black py-2 px-4 rounded-lg border border-black"
+            >
+              Transfer Bank Mandiri
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
-      // Toggle mobile menu visibility on click
-      document
-        .getElementById("menu-button")
-        .addEventListener("click", function () {
-          var menu = document.getElementById("mobile-menu");
-          menu.classList.toggle("hidden");
-        });
+      // Modal functionality
+      let currentKost = null;
+      let currentImageIndex = 0;
+      const images = [
+        "https://picsum.photos/600/400?random=1",
+        "https://picsum.photos/600/400?random=2",
+        "https://picsum.photos/600/400?random=3",
+        "https://picsum.photos/600/400?random=4",
+        "https://picsum.photos/600/400?random=5",
+        "https://picsum.photos/600/400?random=6",
+        "https://picsum.photos/600/400?random=7",
+        "https://picsum.photos/600/400?random=8",
+        "https://picsum.photos/600/400?random=9",
+        "https://picsum.photos/600/400?random=10",
+      ];
 
-      // Show dropdown when hovering over and hide it when cursor leaves
-      document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-        // Show dropdown when cursor enters the dropdown area
-        dropdown.addEventListener("mouseenter", function () {
-          var menu = this.querySelector(".dropdown-menu");
-          menu.classList.remove("hidden");
-        });
+      function openModal(kostId) {
+        currentKost = kostId;
+        const modal = document.getElementById("main-modal");
+        const kostName = document.getElementById("kost-name");
+        const kostAddress = document.getElementById("kost-address");
 
-        // Hide dropdown when cursor leaves the dropdown area
-        dropdown.addEventListener("mouseleave", function () {
-          var menu = this.querySelector(".dropdown-menu");
-          menu.classList.add("hidden");
-        });
-      });
+        if (kostId === "kost-1") {
+          kostName.textContent = "Kost Pria 1";
+          kostAddress.textContent = "Alamat lengkap: Jl. Kost Aman, No. 123";
+        }
+
+        document.getElementById("slider-image").src = images[0]; // Reset to first image
+        modal.classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("main-modal").classList.add("hidden");
+      }
+
+      function openFacilitiesModal() {
+        document.getElementById("facilities-modal").classList.remove("hidden");
+      }
+
+      function closeFacilitiesModal() {
+        document.getElementById("facilities-modal").classList.add("hidden");
+      }
+
+      function openBookingModal() {
+        document.getElementById("booking-modal").classList.remove("hidden");
+      }
+
+      function closeBookingModal() {
+        document.getElementById("booking-modal").classList.add("hidden");
+      }
+
+      function openPaymentModal() {
+        document.getElementById("payment-modal").classList.remove("hidden");
+        closeBookingModal(); // Close previous modal
+      }
+
+      function closePaymentModal() {
+        document.getElementById("payment-modal").classList.add("hidden");
+      }
+
+      // Image slider functions
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        document.getElementById("slider-image").src = images[currentImageIndex];
+      }
+
+      function prevImage() {
+        currentImageIndex =
+          (currentImageIndex - 1 + images.length) % images.length;
+        document.getElementById("slider-image").src = images[currentImageIndex];
+      }
     </script>
   </body>
 </html>

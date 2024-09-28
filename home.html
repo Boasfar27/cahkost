@@ -130,9 +130,14 @@
                 >Edit Profile</a
               >
               <a
-                href="history-pembayaran.html"
+                href="historypembayaran.html"
                 class="block px-4 py-2 hover:bg-gray-200"
                 >History Pembayaran</a
+              >
+              <a
+                href="premiumacc.html"
+                class="block px-4 py-2 hover:bg-gray-200"
+                >Premium Account</a
               >
               <a
                 href="index.html"
@@ -209,10 +214,16 @@
                 >Edit Profile</a
               >
               <a
-                href="history-pembayaran.html"
+                href="historypembayaran.html"
                 class="block px-4 py-2 hover:bg-gray-200"
                 >History Pembayaran</a
               >
+              <a
+                href="premiumacc.html"
+                class="block px-4 py-2 hover:bg-gray-200"
+                >Premium Account</a
+              >
+
               <a
                 href="index.html"
                 id="logout-link"
@@ -761,7 +772,7 @@
 
       <!-- Testimonial -->
       <section class="mt-16">
-        <h2 class="text-2xl font-bold text-gray-800">
+        <h2 class="text-2xl font-bold text-gray-800 text-left">
           Testimoni dari pengguna
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 hover:from-yellow-400 hover:to-yellow-600 transition-colors duration-300"
@@ -769,7 +780,7 @@
             CahKost
           </span>
         </h2>
-        <p class="mt-4 text-gray-600 text-center">
+        <p class="mt-4 text-gray-600 text-left">
           Berikut adalah testimoni dari para penghuni yang pernah tinggal di
           CahKost.
         </p>
@@ -1207,39 +1218,22 @@
           testimonialCurrentIndex * testimonialSlideWidth
         }px)`;
 
-        // Boundary checking: Jika mencapai slide terakhir, langsung kembali ke slide pertama tanpa ada ruang kosong
-        if (testimonialCurrentIndex === totalTestimonialSlides - 1) {
-          testimonialSliderContainer.addEventListener(
-            "transitionend",
-            () => {
-              testimonialSliderContainer.style.transition = "none"; // Matikan transisi sementara
-              testimonialCurrentIndex = 0; // Kembali ke slide pertama
-              testimonialSliderContainer.style.transform = `translateX(-${
-                testimonialCurrentIndex * testimonialSlideWidth
-              }px)`;
-
-              // Aktifkan kembali transisi setelah pengaturan ulang selesai
-              setTimeout(() => {
-                testimonialSliderContainer.style.transition =
-                  "transform 0.5s ease";
-              }, 50);
-            },
-            { once: true } // Listener hanya dipanggil sekali
-          );
-        }
-
-        // Boundary checking: Jika diatur ke index negatif, kembali ke slide terakhir
-        if (testimonialCurrentIndex < 0) {
-          testimonialSliderContainer.style.transition = "none"; // Matikan transisi sejenak
-          testimonialCurrentIndex = totalTestimonialSlides - 1; // Kembali ke slide terakhir
-          testimonialSliderContainer.style.transform = `translateX(-${
-            testimonialCurrentIndex * testimonialSlideWidth
-          }px)`;
-
-          // Aktifkan kembali transisi setelah pengaturan ulang selesai
+        // Boundary checking: Jika mencapai slide terakhir, langsung terus geser ke slide pertama tanpa melompat
+        if (testimonialCurrentIndex === totalTestimonialSlides) {
+          // Tambah waktu tunggu transisi berakhir sebelum mengatur ulang posisi
           setTimeout(() => {
-            testimonialSliderContainer.style.transition = "transform 0.5s ease";
-          }, 0);
+            testimonialSliderContainer.style.transition = "none"; // Matikan transisi sementara
+            testimonialCurrentIndex = 0; // Kembali ke slide pertama
+            testimonialSliderContainer.style.transform = `translateX(-${
+              testimonialCurrentIndex * testimonialSlideWidth
+            }px)`;
+
+            // Aktifkan kembali transisi setelah pengaturan ulang selesai
+            setTimeout(() => {
+              testimonialSliderContainer.style.transition =
+                "transform 0.5s ease";
+            }, 50);
+          }, 100); // Waktu tunggu sesuai durasi transisi
         }
       }
 
