@@ -8,6 +8,7 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <style>
       /* Keyframes for the movement */
       @keyframes moveLeftRight {
@@ -31,6 +32,32 @@
       .animated-logo:hover {
         animation-play-state: paused;
         transform: scale(1.1);
+      }
+      .fixed-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 50%;
+        background-color: #4f46e5; /* Warna ungu elegan */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 50;
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Transisi halus */
+      }
+
+      .fixed-icon svg {
+        stroke: white; /* Warna ikon (putih) */
+      }
+
+      .fixed-icon:hover {
+        background-color: #3b82f6; /* Biru elegan saat hover */
+        transform: scale(1.1); /* Sedikit membesar saat hover */
+      }
+
+      /* Saat tombol sudah diklik (modal terbuka) */
+      .fixed-icon.clicked {
+        background-color: #6d28d9; /* Warna ungu gelap saat aktif (modal terbuka) */
       }
     </style>
   </head>
@@ -289,6 +316,95 @@
       </div>
     </header>
 
+    <!-- premium account -->
+    <div class="fixed-icon" onclick="openModal()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-10 w-10"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <!-- Ikon Rumah -->
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M3 12l9-9 9 9M9 21V9h6v12"
+        />
+        <!-- Ikon Plus -->
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 9v6m-3-3h6"
+        />
+      </svg>
+    </div>
+
+    <!-- modals premium account -->
+    <div
+      id="premiumModal"
+      class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full">
+        <h2 class="text-2xl font-bold mb-4">Premium Account Information</h2>
+        <p class="mb-4">
+          Manfaat dari akun premium termasuk peningkatan visibilitas, akses ke
+          fitur promosi eksklusif, dan laporan analitik tentang kost Anda.
+        </p>
+
+        <!-- Formulir Upload Kost -->
+        <form>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-2">Nama Kost</label>
+            <input
+              type="text"
+              class="border border-gray-300 p-2 rounded w-full"
+              placeholder="Nama Kost"
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-2">Deskripsi Kost</label>
+            <textarea
+              class="border border-gray-300 p-2 rounded w-full"
+              rows="4"
+              placeholder="Deskripsi lengkap kost"
+            ></textarea>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-2">Harga Sewa</label>
+            <input
+              type="number"
+              class="border border-gray-300 p-2 rounded w-full"
+              placeholder="Harga Sewa"
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-2">Kategori Kost</label>
+            <select class="border border-gray-300 p-2 rounded w-full">
+              <option>Kost Putra</option>
+              <option>Kost Putri</option>
+              <option>Kost Campur</option>
+            </select>
+          </div>
+          <button
+            type="submit"
+            class="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            Submit
+          </button>
+        </form>
+
+        <button
+          class="mt-4 bg-red-500 text-white px-4 py-2 rounded"
+          onclick="closeModal()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
       <!-- Hero Section -->
@@ -490,7 +606,10 @@
 
       <!-- Updates Section -->
       <section class="mt-16">
-        <h2 class="text-2xl font-bold text-gray-800 text-center mt-8">
+        <h2
+          class="text-2xl font-bold text-gray-800 text-center mt-8"
+          data-aos="fade-up"
+        >
           Promo Terbaru dari
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 hover:from-yellow-400 hover:to-yellow-600 transition-colors duration-300"
@@ -498,7 +617,11 @@
             CahKost
           </span>
         </h2>
-        <p class="text-gray-600 mt-2 text-center">
+        <p
+          class="text-gray-600 mt-2 text-center"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           Manfaatkan promo terbaik dari CahKost! Dapatkan diskon spesial untuk
           penyewaan kost dan nikmati kenyamanan dengan harga yang terjangkau.
           Promo terbatas, jangan sampai terlewatkan!
@@ -507,6 +630,8 @@
           <!-- Promo 1 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-400 to-purple-500"
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             <div class="overflow-hidden">
               <img
@@ -527,6 +652,8 @@
           <!-- Promo 2 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-400 to-purple-500"
+            data-aos="fade-up"
+            data-aos-delay="300"
           >
             <div class="overflow-hidden">
               <img
@@ -547,6 +674,8 @@
           <!-- Promo 3 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-400 to-purple-500"
+            data-aos="fade-up"
+            data-aos-delay="400"
           >
             <div class="overflow-hidden">
               <img
@@ -569,7 +698,11 @@
 
       <!-- Features Section -->
       <section class="mt-16">
-        <h2 class="text-2xl font-bold text-gray-800 text-center">
+        <h2
+          class="text-2xl font-bold text-gray-800 text-center"
+          data-aos="fade-up"
+          data-aos-delay="700"
+        >
           Temukan Solusi Sempurna untuk Setiap Kebutuhan Anda di
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 hover:from-yellow-400 hover:to-yellow-600 transition-colors duration-300"
@@ -582,6 +715,8 @@
           <!-- Feature 1 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-500 to-purple-600"
+            data-aos="fade-up"
+            data-aos-delay="800"
           >
             <img
               src="https://picsum.photos/200"
@@ -601,6 +736,8 @@
           <!-- Feature 2 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-500 to-purple-600"
+            data-aos="fade-up"
+            data-aos-delay="900"
           >
             <img
               src="https://picsum.photos/200"
@@ -620,6 +757,8 @@
           <!-- Feature 3 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-500 to-purple-600"
+            data-aos="fade-up"
+            data-aos-delay="1000"
           >
             <img
               src="https://picsum.photos/200"
@@ -1282,6 +1421,22 @@
         event.preventDefault();
         window.location.href = "index.html";
       });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: false,
+        mirror: true,
+      });
+
+      // modals premium acc
+      function openModal() {
+        document.getElementById("premiumModal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("premiumModal").classList.add("hidden");
+      }
     </script>
   </body>
 </html>

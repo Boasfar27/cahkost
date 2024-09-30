@@ -94,28 +94,12 @@
               id="user-dropdown-link"
             >
               Nama Pengguna
-              <!-- Profile photo -->
               <img
                 src="https://via.placeholder.com/40"
                 alt="Profile Photo"
                 class="w-10 h-10 rounded-full ml-2"
                 id="user-profile-photo"
               />
-              <!-- Dropdown icon -->
-              <svg
-                class="w-4 h-4 ml-1 dropdown-icon"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
             </a>
             <div
               class="absolute hidden dropdown-menu bg-white text-gray-800 mt-2 rounded shadow-lg z-50"
@@ -126,9 +110,14 @@
                 >Edit Profile</a
               >
               <a
-                href="history-pembayaran.html"
+                href="historypembayaran.html"
                 class="block px-4 py-2 hover:bg-gray-200"
                 >History Pembayaran</a
+              >
+              <a
+                href="premiumacc.html"
+                class="block px-4 py-2 hover:bg-gray-200"
+                >Premium Account</a
               >
               <a
                 href="index.html"
@@ -205,10 +194,16 @@
                 >Edit Profile</a
               >
               <a
-                href="history-pembayaran.html"
+                href="historypembayaran.html"
                 class="block px-4 py-2 hover:bg-gray-200"
                 >History Pembayaran</a
               >
+              <a
+                href="premiumacc.html"
+                class="block px-4 py-2 hover:bg-gray-200"
+                >Premium Account</a
+              >
+
               <a
                 href="index.html"
                 id="logout-link"
@@ -273,7 +268,6 @@
         </nav>
       </div>
     </header>
-    
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
@@ -282,90 +276,235 @@
         <h2 class="text-2xl font-bold text-gray-800">Kost Eksklusif</h2>
         <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
-            <img src="https://picsum.photos/200" alt="Kost Eksklusif 1" class="rounded-lg w-full" />
-            <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg">Promo</div>
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Eksklusif 1</h3>
+            <img
+              src="https://picsum.photos/200"
+              alt="Kost Eksklusif 1"
+              class="rounded-lg w-full"
+            />
+            <div
+              class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg"
+            >
+              Promo
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-gray-800">
+              Kost Eksklusif 1
+            </h3>
             <p class="mt-2 text-gray-600">Rp 1.500.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, Kolam Renang</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <p class="mt-2 text-gray-600">
+              Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry,
+              TV, Kolam Renang
+            </p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105"
+              >Sewa</a
+            >
           </div>
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Eksklusif 2" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Eksklusif 2</h3>
+            <img
+              src="https://picsum.photos/200"
+              alt="Kost Eksklusif 2"
+              class="rounded-lg w-full"
+            />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">
+              Kost Eksklusif 2
+            </h3>
             <p class="mt-2 text-gray-600">Rp 2.000.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, Kolam Renang, Gym</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <p class="mt-2 text-gray-600">
+              Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry,
+              TV, Kolam Renang, Gym
+            </p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105"
+              >Sewa</a
+            >
           </div>
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Eksklusif 3" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Eksklusif 3</h3>
+            <img
+              src="https://picsum.photos/200"
+              alt="Kost Eksklusif 3"
+              class="rounded-lg w-full"
+            />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">
+              Kost Eksklusif 3
+            </h3>
             <p class="mt-2 text-gray-600">Rp 2.500.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, Kolam Renang, Gym, Rooftop</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <p class="mt-2 text-gray-600">
+              Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry,
+              TV, Kolam Renang, Gym, Rooftop
+            </p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105"
+              >Sewa</a
+            >
           </div>
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
-            <img src="https://picsum.photos/200" alt="Kost Eksklusif 4" class="rounded-lg w-full" />
-            <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg">Promo</div>
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Eksklusif 4</h3>
+            <img
+              src="https://picsum.photos/200"
+              alt="Kost Eksklusif 4"
+              class="rounded-lg w-full"
+            />
+            <div
+              class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg"
+            >
+              Promo
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-gray-800">
+              Kost Eksklusif 4
+            </h3>
             <p class="mt-2 text-gray-600">Rp 3.000.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, Kolam Renang, Gym, Rooftop, Spa</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <p class="mt-2 text-gray-600">
+              Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry,
+              TV, Kolam Renang, Gym, Rooftop, Spa
+            </p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105"
+              >Sewa</a
+            >
           </div>
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Eksklusif 5" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Eksklusif 5</h3>
+            <img
+              src="https://picsum.photos/200"
+              alt="Kost Eksklusif 5"
+              class="rounded-lg w-full"
+            />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">
+              Kost Eksklusif 5
+            </h3>
             <p class="mt-2 text-gray-600">Rp 3.500.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, Kolam Renang, Gym, Rooftop, Spa, Sauna</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <p class="mt-2 text-gray-600">
+              Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry,
+              TV, Kolam Renang, Gym, Rooftop, Spa, Sauna
+            </p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105"
+              >Sewa</a
+            >
           </div>
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Eksklusif 6" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Eksklusif 6</h3>
+            <img
+              src="https://picsum.photos/200"
+              alt="Kost Eksklusif 6"
+              class="rounded-lg w-full"
+            />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">
+              Kost Eksklusif 6
+            </h3>
             <p class="mt-2 text-gray-600">Rp 4.000.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, Kolam Renang, Gym, Rooftop, Spa, Sauna, Home Theater</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <p class="mt-2 text-gray-600">
+              Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry,
+              TV, Kolam Renang, Gym, Rooftop, Spa, Sauna, Home Theater
+            </p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105"
+              >Sewa</a
+            >
           </div>
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg relative">
-            <img src="https://picsum.photos/200" alt="Kost Eksklusif 7" class="rounded-lg w-full" />
-            <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg">Promo</div>
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Eksklusif 7</h3>
+            <img
+              src="https://picsum.photos/200"
+              alt="Kost Eksklusif 7"
+              class="rounded-lg w-full"
+            />
+            <div
+              class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-br-lg"
+            >
+              Promo
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-gray-800">
+              Kost Eksklusif 7
+            </h3>
             <p class="mt-2 text-gray-600">Rp 4.500.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, Kolam Renang, Gym, Rooftop, Spa, Sauna, Home Theater, Jacuzzi</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <p class="mt-2 text-gray-600">
+              Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry,
+              TV, Kolam Renang, Gym, Rooftop, Spa, Sauna, Home Theater, Jacuzzi
+            </p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105"
+              >Sewa</a
+            >
           </div>
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Eksklusif 8" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Eksklusif 8</h3>
+            <img
+              src="https://picsum.photos/200"
+              alt="Kost Eksklusif 8"
+              class="rounded-lg w-full"
+            />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">
+              Kost Eksklusif 8
+            </h3>
             <p class="mt-2 text-gray-600">Rp 5.000.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, Kolam Renang, Gym, Rooftop, Spa, Sauna, Home Theater, Jacuzzi, Private Garden</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <p class="mt-2 text-gray-600">
+              Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry,
+              TV, Kolam Renang, Gym, Rooftop, Spa, Sauna, Home Theater, Jacuzzi,
+              Private Garden
+            </p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105"
+              >Sewa</a
+            >
           </div>
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Eksklusif 9" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Eksklusif 9</h3>
+            <img
+              src="https://picsum.photos/200"
+              alt="Kost Eksklusif 9"
+              class="rounded-lg w-full"
+            />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">
+              Kost Eksklusif 9
+            </h3>
             <p class="mt-2 text-gray-600">Rp 5.000.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, Kolam Renang, Gym, Rooftop, Spa, Sauna, Home Theater, Jacuzzi, Private Garden, Helipad</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <p class="mt-2 text-gray-600">
+              Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry,
+              TV, Kolam Renang, Gym, Rooftop, Spa, Sauna, Home Theater, Jacuzzi,
+              Private Garden, Helipad
+            </p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105"
+              >Sewa</a
+            >
           </div>
           <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
-            <img src="https://picsum.photos/200" alt="Kost Eksklusif 10" class="rounded-lg w-full" />
-            <h3 class="mt-4 text-lg font-bold text-gray-800">Kost Eksklusif 10</h3>
+            <img
+              src="https://picsum.photos/200"
+              alt="Kost Eksklusif 10"
+              class="rounded-lg w-full"
+            />
+            <h3 class="mt-4 text-lg font-bold text-gray-800">
+              Kost Eksklusif 10
+            </h3>
             <p class="mt-2 text-gray-600">Rp 5.800.000 / bulan</p>
-            <p class="mt-2 text-gray-600">Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry, TV, Kolam Renang, Gym, Rooftop, Spa, Sauna, Home Theater, Jacuzzi, Private Garden, Helipad, Private Beach</p>
-            <a href="#" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105">Sewa</a>
+            <p class="mt-2 text-gray-600">
+              Fasilitas: AC, Wi-Fi, Kamar Mandi Dalam, Parkir, Dapur, Laundry,
+              TV, Kolam Renang, Gym, Rooftop, Spa, Sauna, Home Theater, Jacuzzi,
+              Private Garden, Helipad, Private Beach
+            </p>
+            <a
+              href="#"
+              class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-[0_4px_12px_rgba(100,0,255,0.4)] hover:scale-105"
+              >Sewa</a
+            >
           </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gray-900 text-white py-8">
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="text-center md:text-left">
-            <a href="#" class="text-2xl font-bold">CahKost</a>
+            <a href="home.html" class="text-2xl font-bold">CahKost</a>
             <p class="mt-2">
-              Revolutionizing Hospitality, One Pod and Cabin at a Time
+              making it a comfortable place for a second home in your hometown
             </p>
           </div>
           <div class="mt-4 md:mt-0 space-x-4">
@@ -377,18 +516,19 @@
             >
           </div>
         </div>
-        <div class="mt-8 flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; 2023 CahKost. All Rights Reserved.</p>
-          <div class="mt-4 md:mt-0 space-x-4">
-            <a href="https://www.instagram.com/farhaaan____/"
-              ><img src="ig.png" alt="Instagram" class="h-6"
-            /></a>
-            <a href="https://wa.me/+6285158442747"
-              ><img src="wa.jpeg" alt="WhatsApp" class="h-6"
-            /></a>
+        <div
+          class="mt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <div class="mt-4 md:ml-0 flex space-x-4">
+            <a href="#">
+              <img src="./assets/img/ig.png" alt="Instagram" class="h-6" />
+            </a>
+            <a href="#">
+              <img src="./assets/img/wa.jpeg" alt="WhatsApp" class="h-6" />
+            </a>
           </div>
-        </div>
-          
+          <br />
+          <p>&copy; 2024 CahKost. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
