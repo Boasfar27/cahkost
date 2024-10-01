@@ -8,6 +8,11 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <style>
       /* Keyframes for the movement */
       @keyframes moveLeftRight {
@@ -135,8 +140,7 @@
           </p>
         </div>
       </section>
-
-      <!-- Slider Section -->
+      <!-- Informasi Kost Anda -->
       <section class="mt-16">
         <h2 class="text-2xl font-bold text-gray-800 text-center">
           kualitas kost
@@ -147,7 +151,7 @@
           </span>
           yang terjamin nyaman
         </h2>
-
+        <!-- slider section -->
         <div class="slider mt-8 relative overflow-hidden">
           <div
             class="slides flex transition-transform duration-700 ease-in-out"
@@ -258,67 +262,17 @@
               />
             </div>
           </div>
-
-          <!-- Prev and Next buttons (Positioned on the sides of the images) -->
-          <button
-            class="prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white rounded-full p-4 hover:bg-blue-600 transition duration-300 ease-in-out"
-            onclick="moveSlide(-1)"
-          >
-            &#10094;
-          </button>
-          <button
-            class="next absolute right-4 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white rounded-full p-4 hover:bg-blue-600 transition duration-300 ease-in-out"
-            onclick="moveSlide(1)"
-          >
-            &#10095;
-          </button>
         </div>
       </section>
 
-      <!-- Booking Section
-      <section class="mt-16">
-        <h2 class="text-2xl font-bold text-gray-800">
-          Di mana Anda ingin menginap?
-        </h2>
-        <form class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
-            <label for="location" class="block text-gray-600">Lokasi</label>
-            <input
-              type="text"
-              id="location"
-              class="w-full px-4 py-2 border rounded"
-            />
-          </div>
-          <div>
-            <label for="checkin" class="block text-gray-600">Check-in</label>
-            <input
-              type="date"
-              id="checkin"
-              class="w-full px-4 py-2 border rounded"
-            />
-          </div>
-          <div>
-            <label for="checkout" class="block text-gray-600">Check-out</label>
-            <input
-              type="date"
-              id="checkout"
-              class="w-full px-4 py-2 border rounded"
-            />
-          </div>
-          <div class="md:col-span-3">
-            <button
-              type="submit"
-              class="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-            >
-              Search
-            </button>
-          </div>
-        </form>
-      </section> -->
+    
 
       <!-- Updates Section -->
       <section class="mt-16">
-        <h2 class="text-2xl font-bold text-gray-800 text-center mt-8">
+        <h2
+          class="text-2xl font-bold text-gray-800 text-center mt-8"
+          data-aos="fade-up"
+        >
           Promo Terbaru dari
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 hover:from-yellow-400 hover:to-yellow-600 transition-colors duration-300"
@@ -326,7 +280,11 @@
             CahKost
           </span>
         </h2>
-        <p class="text-gray-600 mt-2 text-center">
+        <p
+          class="text-gray-600 mt-2 text-center"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           Manfaatkan promo terbaik dari CahKost! Dapatkan diskon spesial untuk
           penyewaan kost dan nikmati kenyamanan dengan harga yang terjangkau.
           Promo terbatas, jangan sampai terlewatkan!
@@ -335,6 +293,8 @@
           <!-- Promo 1 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-400 to-purple-500"
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             <div class="overflow-hidden">
               <img
@@ -355,6 +315,8 @@
           <!-- Promo 2 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-400 to-purple-500"
+            data-aos="fade-up"
+            data-aos-delay="300"
           >
             <div class="overflow-hidden">
               <img
@@ -375,6 +337,8 @@
           <!-- Promo 3 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-400 to-purple-500"
+            data-aos="fade-up"
+            data-aos-delay="400"
           >
             <div class="overflow-hidden">
               <img
@@ -397,7 +361,11 @@
 
       <!-- Features Section -->
       <section class="mt-16">
-        <h2 class="text-2xl font-bold text-gray-800 text-center">
+        <h2
+          class="text-2xl font-bold text-gray-800 text-center"
+          data-aos="fade-up"
+          data-aos-delay="700"
+        >
           Temukan Solusi Sempurna untuk Setiap Kebutuhan Anda di
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 hover:from-yellow-400 hover:to-yellow-600 transition-colors duration-300"
@@ -410,6 +378,8 @@
           <!-- Feature 1 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-500 to-purple-600"
+            data-aos="fade-up"
+            data-aos-delay="800"
           >
             <img
               src="https://picsum.photos/200"
@@ -429,6 +399,8 @@
           <!-- Feature 2 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-500 to-purple-600"
+            data-aos="fade-up"
+            data-aos-delay="900"
           >
             <img
               src="https://picsum.photos/200"
@@ -448,6 +420,8 @@
           <!-- Feature 3 -->
           <div
             class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card hover:bg-gradient-to-r from-blue-500 to-purple-600"
+            data-aos="fade-up"
+            data-aos-delay="1000"
           >
             <img
               src="https://picsum.photos/200"
@@ -490,79 +464,316 @@
         </div>
       </section>
 
-      <!-- Testimonials Section -->
-      <section class="mt-16">
+      <!-- partnership -->
+      <section class="mt-16 text-center">
         <h2 class="text-2xl font-bold text-gray-800">
-          Cerita dari Sahabat
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 hover:from-yellow-400 hover:to-yellow-600 transition-colors duration-300"
+          >
+            Partnership
+          </span>
+        </h2>
+        <p class="mt-4 text-gray-600">
+          Terimakasih Kepada Para Partnership Telah Bekerja Sama Dengan
+          CahKost!!!
+        </p>
+
+        <div class="mt-8 flex justify-center flex-wrap gap-8">
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/gojek.png"
+              alt="Gojek"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+
+          <a href="https://www.grab.com/id/" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/Grab Official.jpeg"
+              alt="Grab"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/unesa.png"
+              alt="Unesa"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/Kota Surabaya 1.png"
+              alt="Surabaya"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/bankbtn.png"
+              alt="Bank BTN"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/bankbca.png"
+              alt="Bank BCA"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/bankmandiri.png"
+              alt="Bank Mandiri"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/bankmandiri.png"
+              alt="Bank Mandiri"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/bankmandiri.png"
+              alt="Bank Mandiri"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/bankmandiri.png"
+              alt="Bank Mandiri"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/bankmandiri.png"
+              alt="Bank Mandiri"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+          <a href="#" class="w-1/3 sm:w-1/4 md:w-1/6">
+            <img
+              src="/assets/img/bankmandiri.png"
+              alt="Bank Mandiri"
+              class="h-16 md:h-20 mx-auto animated-logo"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- Testimonial -->
+      <section class="mt-16">
+        <h2 class="text-2xl font-bold text-gray-800 text-left">
+          Testimoni dari pengguna
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 hover:from-yellow-400 hover:to-yellow-600 transition-colors duration-300"
           >
             CahKost
           </span>
         </h2>
-
-        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <!-- Testimonial 1 -->
-          <div
-            class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card"
-          >
-            <img
-              src="https://picsum.photos/200"
-              alt="Leonard's Profile"
-              class="rounded-full w-16 h-16 mx-auto"
-            />
-            <p class="mt-4 text-gray-600">
-              "Saya sangat suka tinggal di CahKost. Lokasinya strategis dan kita
-              bisa menikmati pemandangan kota Surabaya! Suasananya sangat
-              nyaman, dan Anda bisa bersantai di area umum yang menyenangkan
-              setelah seharian beraktivitas."
-            </p>
-
-            <p class="mt-2 text-gray-600 font-bold">- Dwi</p>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div
-            class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 card"
-          >
-            <img
-              src="https://picsum.photos/200"
-              alt="Sarah's Profile"
-              class="rounded-full w-16 h-16 mx-auto"
-            />
-            <p class="mt-4 text-gray-600">
-              "Kost CahKost adalah tempat tinggal yang sempurna untuk kehidupan
-              sehari-hari. Kamarnya nyaman dan lingkungannya asri. Sangat
-              direkomendasikan!"
-            </p>
-
-            <p class="mt-2 text-gray-600 font-bold">- Sarah</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Partnership Section -->
-      <section class="mt-16 text-center">
-        <h2 class="text-2xl font-bold text-gray-800">Partnership</h2>
-        <p class="mt-4 text-gray-600">
-          Terimakasih Kepada Para Partnership Telah Bekerja Sama Dengan
-          CahKost!!!
+        <p class="mt-4 text-gray-600 text-left">
+          Berikut adalah testimoni dari para penghuni yang pernah tinggal di
+          CahKost.
         </p>
-        <div class="mt-8 flex justify-center space-x-8">
-          <a href="#">
-            <img
-              src="./assets/img/gojek.png"
-              alt="Gojek"
-              class="h-12 animated-logo"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="./assets/img/Grab Official.jpeg"
-              alt="Grab"
-              class="h-12 animated-logo"
-            />
-          </a>
+
+        <div class="relative mt-8">
+          <!-- Slider Container -->
+          <div id="testimonial-slider" class="overflow-hidden">
+            <div
+              class="flex transform transition-transform duration-500 ease-in-out slider-content"
+              style="width: 333.33%"
+            >
+              <!-- Testimoni 1 -->
+              <div class="w-1/3 px-4 shrink-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src="https://picsum.photos/100"
+                    alt="User 1"
+                    class="rounded-full w-16 h-16 mx-auto"
+                  />
+                  <p class="mt-4 text-gray-600">
+                    "CahKost memberikan pengalaman tinggal yang nyaman dan
+                    bersih."
+                  </p>
+                  <p class="mt-2 text-gray-600 font-bold">- Amanda</p>
+                </div>
+              </div>
+
+              <!-- Testimoni 2 -->
+              <div class="w-1/3 px-4 shrink-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src="https://picsum.photos/101"
+                    alt="User 2"
+                    class="rounded-full w-16 h-16 mx-auto"
+                  />
+                  <p class="mt-4 text-gray-600">
+                    "Kamar sangat bersih, fasilitas lengkap, dan suasana sangat
+                    tenang. Sangat puas!"
+                  </p>
+                  <p class="mt-2 text-gray-600 font-bold">- Budi</p>
+                </div>
+              </div>
+
+              <!-- Testimoni 3 -->
+              <div class="w-1/3 px-4 shrink-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src="https://picsum.photos/102"
+                    alt="User 3"
+                    class="rounded-full w-16 h-16 mx-auto"
+                  />
+                  <p class="mt-4 text-gray-600">
+                    "Saya merasa sangat nyaman tinggal di CahKost. Lokasi sangat
+                    strategis."
+                  </p>
+                  <p class="mt-2 text-gray-600 font-bold">- Citra</p>
+                </div>
+              </div>
+
+              <!-- Testimoni 4 -->
+              <div class="w-1/3 px-4 shrink-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src="https://picsum.photos/103"
+                    alt="User 4"
+                    class="rounded-full w-16 h-16 mx-auto"
+                  />
+                  <p class="mt-4 text-gray-600">
+                    "Harga yang terjangkau dengan fasilitas yang sangat memadai.
+                    Saya akan kembali!"
+                  </p>
+                  <p class="mt-2 text-gray-600 font-bold">- Dwi</p>
+                </div>
+              </div>
+
+              <!-- Testimoni 5 -->
+              <div class="w-1/3 px-4 shrink-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src="https://picsum.photos/104"
+                    alt="User 5"
+                    class="rounded-full w-16 h-16 mx-auto"
+                  />
+                  <p class="mt-4 text-gray-600">
+                    "CahKost adalah tempat tinggal yang tepat. Lingkungannya
+                    nyaman dan aman."
+                  </p>
+                  <p class="mt-2 text-gray-600 font-bold">- Eko</p>
+                </div>
+              </div>
+
+              <!-- Testimoni 6 -->
+              <div class="w-1/3 px-4 shrink-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src="https://picsum.photos/105"
+                    alt="User 6"
+                    class="rounded-full w-16 h-16 mx-auto"
+                  />
+                  <p class="mt-4 text-gray-600">
+                    "Pelayanan sangat ramah dan cepat. Saya sangat menikmati
+                    tinggal di sini."
+                  </p>
+                  <p class="mt-2 text-gray-600 font-bold">- Fajar</p>
+                </div>
+              </div>
+
+              <!-- Testimoni 7 -->
+              <div class="w-1/3 px-4 shrink-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src="https://picsum.photos/106"
+                    alt="User 7"
+                    class="rounded-full w-16 h-16 mx-auto"
+                  />
+                  <p class="mt-4 text-gray-600">
+                    "Sangat puas dengan kebersihan dan kenyamanan CahKost."
+                  </p>
+                  <p class="mt-2 text-gray-600 font-bold">- Gina</p>
+                </div>
+              </div>
+
+              <!-- Testimoni 8 -->
+              <div class="w-1/3 px-4 shrink-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src="https://picsum.photos/107"
+                    alt="User 8"
+                    class="rounded-full w-16 h-16 mx-auto"
+                  />
+                  <p class="mt-4 text-gray-600">
+                    "Suasananya sangat nyaman dan strategis. Banyak fasilitas di
+                    sekitar kost."
+                  </p>
+                  <p class="mt-2 text-gray-600 font-bold">- Hani</p>
+                </div>
+              </div>
+
+              <!-- Testimoni 9 -->
+              <div class="w-1/3 px-4 shrink-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src="https://picsum.photos/108"
+                    alt="User 9"
+                    class="rounded-full w-16 h-16 mx-auto"
+                  />
+                  <p class="mt-4 text-gray-600">
+                    "Tinggal di CahKost sangat menyenangkan, lingkungannya aman
+                    dan bersih."
+                  </p>
+                  <p class="mt-2 text-gray-600 font-bold">- Irma</p>
+                </div>
+              </div>
+
+              <!-- Testimoni 10 -->
+              <div class="w-1/3 px-4 shrink-0">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out"
+                >
+                  <img
+                    src="https://picsum.photos/109"
+                    alt="User 10"
+                    class="rounded-full w-16 h-16 mx-auto"
+                  />
+                  <p class="mt-4 text-gray-600">
+                    "Lokasi strategis, lingkungan nyaman dan bersih. Sempurna
+                    untuk mahasiswa."
+                  </p>
+                  <p class="mt-2 text-gray-600 font-bold">- Joko</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -639,7 +850,7 @@
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="text-center md:text-left">
-            <a href="index.html" class="text-2xl font-bold">CahKost</a>
+            <a href="home.html" class="text-2xl font-bold">CahKost</a>
             <p class="mt-2">
               making it a comfortable place for a second home in your hometown
             </p>
@@ -671,56 +882,191 @@
     </footer>
 
     <script>
+      // Toggle mobile menu visibility on click
       document
         .getElementById("menu-button")
         .addEventListener("click", function () {
           var menu = document.getElementById("mobile-menu");
-          if (menu.classList.contains("hidden")) {
-            menu.classList.remove("hidden");
-          } else {
-            menu.classList.add("hidden");
-          }
+          menu.classList.toggle("hidden");
         });
 
       document.querySelectorAll(".dropdown").forEach(function (dropdown) {
-        dropdown.addEventListener("click", function () {
+        dropdown.addEventListener("mouseenter", function () {
           var menu = this.querySelector(".dropdown-menu");
-          if (menu.classList.contains("hidden")) {
-            menu.classList.remove("hidden");
-          } else {
-            menu.classList.add("hidden");
-          }
+          menu.classList.remove("hidden");
+        });
+
+        // Hide dropdown when cursor leaves the dropdown area
+        dropdown.addEventListener("mouseleave", function () {
+          var menu = this.querySelector(".dropdown-menu");
+          menu.classList.add("hidden");
         });
       });
+
       // slide gambar
       let currentIndex = 0;
       const sliderContainer = document.querySelector(".slides");
       const slides = sliderContainer.children;
       const totalSlides = slides.length;
-      const slideWidth = slides[0].offsetWidth;
+      let slideWidth = slides[0].offsetWidth;
 
+      // Clone slide pertama dan terakhir untuk efek infinite loop
+      const firstSlideClone = slides[0].cloneNode(true);
+      const lastSlideClone = slides[totalSlides - 1].cloneNode(true);
+
+      sliderContainer.appendChild(firstSlideClone);
+      sliderContainer.insertBefore(lastSlideClone, slides[0]);
+
+      // Update total slide setelah cloning
+      const newTotalSlides = sliderContainer.children.length;
+
+      // Function to move slides
       function moveSlide(direction) {
         currentIndex += direction;
 
-        if (currentIndex < 0) {
-          currentIndex = totalSlides - 1; // Kembali ke slide terakhir jika mundur dari slide pertama
-        } else if (currentIndex >= totalSlides) {
-          currentIndex = 0; // Kembali ke slide pertama setelah slide terakhir
-        }
-
-        // Pindah ke slide yang ditentukan berdasarkan index
+        sliderContainer.style.transition = "transform 0.5s ease";
         sliderContainer.style.transform = `translateX(-${
           currentIndex * slideWidth
         }px)`;
+
+        // Jika pindah ke slide duplikat terakhir, langsung ke slide pertama (tanpa animasi)
+        if (currentIndex === newTotalSlides - 1) {
+          // Setelah transisi selesai, langsung loncat ke slide pertama (asli)
+          sliderContainer.addEventListener(
+            "transitionend",
+            () => {
+              sliderContainer.style.transition = "none"; // Matikan transisi
+              currentIndex = 1; // Kembali ke slide pertama (asli)
+              sliderContainer.style.transform = `translateX(-${
+                currentIndex * slideWidth
+              }px)`;
+            },
+            { once: true }
+          );
+        }
+
+        // Jika pindah ke slide duplikat pertama, langsung ke slide terakhir (tanpa animasi)
+        else if (currentIndex === 0) {
+          // Setelah transisi selesai, langsung loncat ke slide terakhir (asli)
+          sliderContainer.addEventListener(
+            "transitionend",
+            () => {
+              sliderContainer.style.transition = "none"; // Matikan transisi
+              currentIndex = newTotalSlides - 2; // Kembali ke slide terakhir (asli)
+              sliderContainer.style.transform = `translateX(-${
+                currentIndex * slideWidth
+              }px)`;
+            },
+            { once: true }
+          );
+        }
       }
 
-      // Tambahkan event listener untuk mengatur ukuran ulang jika window di-resize
+      // Set interval for automatic slide
+      let autoSlideInterval = setInterval(() => {
+        moveSlide(1);
+      }, 1500);
+
+      // Stop sliding when the user hovers over the slider
+      sliderContainer.addEventListener("mouseenter", () => {
+        clearInterval(autoSlideInterval);
+      });
+
+      // Resume sliding when the user's mouse leaves the slider
+      sliderContainer.addEventListener("mouseleave", () => {
+        autoSlideInterval = setInterval(() => {
+          moveSlide(1);
+        }, 1500);
+      });
+
+      // Handle window resize for responsive behavior
       window.addEventListener("resize", () => {
-        const newSlideWidth = slides[0].offsetWidth;
+        slideWidth = slides[0].offsetWidth;
+        sliderContainer.style.transition = "none"; // No transition during resize
         sliderContainer.style.transform = `translateX(-${
-          currentIndex * newSlideWidth
+          currentIndex * slideWidth
         }px)`;
       });
+
+      // Set awal  position
+      sliderContainer.style.transform = `translateX(-${
+        currentIndex * slideWidth
+      }px)`;
+
+      //testimoni
+      const testimonialSliderContainer =
+        document.querySelector(".slider-content");
+      const testimonialSlides = testimonialSliderContainer.children;
+      const totalTestimonialSlides = testimonialSlides.length;
+      let testimonialCurrentIndex = 0;
+      let testimonialSlideWidth = testimonialSlides[0].offsetWidth; // Lebar slide
+      let testimonialAutoSlideInterval = setInterval(
+        autoMoveTestimonialSlide,
+        2000
+      ); // Set interval untuk auto slide
+
+      // Fungsi untuk menggeser slide testimonial otomatis
+      function autoMoveTestimonialSlide() {
+        moveTestimonialSlide(1);
+      }
+
+      // Fungsi untuk menggeser slide testimonial ke arah yang ditentukan
+      function moveTestimonialSlide(direction) {
+        testimonialCurrentIndex += direction;
+
+        // Transisi pergeseran slide
+        testimonialSliderContainer.style.transition = "transform 0.5s ease";
+        testimonialSliderContainer.style.transform = `translateX(-${
+          testimonialCurrentIndex * testimonialSlideWidth
+        }px)`;
+
+        // Boundary checking: Jika mencapai slide terakhir, langsung terus geser ke slide pertama tanpa melompat
+        if (testimonialCurrentIndex === totalTestimonialSlides) {
+          // Tambah waktu tunggu transisi berakhir sebelum mengatur ulang posisi
+          setTimeout(() => {
+            testimonialSliderContainer.style.transition = "none"; // Matikan transisi sementara
+            testimonialCurrentIndex = 0; // Kembali ke slide pertama
+            testimonialSliderContainer.style.transform = `translateX(-${
+              testimonialCurrentIndex * testimonialSlideWidth
+            }px)`;
+
+            // Aktifkan kembali transisi setelah pengaturan ulang selesai
+            setTimeout(() => {
+              testimonialSliderContainer.style.transition =
+                "transform 0.5s ease";
+            }, 50);
+          }, 100); // Waktu tunggu sesuai durasi transisi
+        }
+      }
+
+      // Hentikan slide saat kursor berada di atas slide dan lanjutkan saat kursor keluar
+      for (let i = 0; i < totalTestimonialSlides; i++) {
+        testimonialSlides[i].addEventListener("mouseenter", () => {
+          clearInterval(testimonialAutoSlideInterval); // Hentikan auto slide ketika kursor berada di atas card
+        });
+
+        testimonialSlides[i].addEventListener("mouseleave", () => {
+          testimonialAutoSlideInterval = setInterval(
+            autoMoveTestimonialSlide,
+            1500
+          ); // Lanjutkan auto slide ketika kursor keluar dari card
+        });
+      }
+
+      // Responsif: Menyesuaikan lebar slide saat ukuran jendela diubah
+      window.addEventListener("resize", () => {
+        testimonialSlideWidth = testimonialSlides[0].offsetWidth; // Hitung ulang lebar slide
+        testimonialSliderContainer.style.transition = "none"; // Nonaktifkan transisi untuk penyesuaian instan
+        testimonialSliderContainer.style.transform = `translateX(-${
+          testimonialCurrentIndex * testimonialSlideWidth
+        }px)`;
+      });
+
+      // Set posisi awal slide
+      testimonialSliderContainer.style.transform = `translateX(-${
+        testimonialCurrentIndex * testimonialSlideWidth
+      }px)`;
+
       //partnership logo
       const logos = document.querySelectorAll(".animated-logo");
       logos.forEach((logo) => {
@@ -730,6 +1076,13 @@
         logo.addEventListener("mouseleave", () => {
           logo.style.animationPlayState = "running";
         });
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: false,
+        mirror: true,
       });
     </script>
   </body>
